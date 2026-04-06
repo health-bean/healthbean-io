@@ -5,12 +5,13 @@ import { Cta } from "@/components/cta";
 describe("Cta", () => {
   it("renders the headline", () => {
     render(<Cta />);
-    expect(screen.getByRole("heading", { name: /take control/i })).toBeDefined();
+    expect(
+      screen.getByRole("heading", { name: /first to know/i })
+    ).toBeDefined();
   });
 
-  it("renders both product links", () => {
+  it("renders the early access form", () => {
     render(<Cta />);
-    expect(screen.getByRole("link", { name: /try chewiq/i })).toBeDefined();
-    expect(screen.getByRole("link", { name: /try honeydoiq/i })).toBeDefined();
+    expect(screen.getAllByPlaceholderText(/email/i).length).toBeGreaterThan(0);
   });
 });

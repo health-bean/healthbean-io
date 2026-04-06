@@ -5,22 +5,27 @@ import { Products } from "@/components/products";
 describe("Products", () => {
   it("renders section headline", () => {
     render(<Products />);
-    expect(screen.getByRole("heading", { name: /two platforms/i })).toBeDefined();
+    expect(
+      screen.getByRole("heading", { name: /two platforms/i })
+    ).toBeDefined();
   });
 
   it("renders ChewIQ card", () => {
     render(<Products />);
-    expect(screen.getByText("The Protocol Management & Healing Platform")).toBeDefined();
+    expect(
+      screen.getByText("The Protocol Management & Healing Platform")
+    ).toBeDefined();
   });
 
   it("renders HoneyDoIQ card", () => {
     render(<Products />);
-    expect(screen.getByText("Smart Preventive Home Maintenance")).toBeDefined();
+    expect(
+      screen.getByText("Smart Preventive Home Maintenance")
+    ).toBeDefined();
   });
 
-  it("renders key features for both products", () => {
+  it("shows coming soon badges", () => {
     render(<Products />);
-    expect(screen.getByText(/correlation engine/i)).toBeDefined();
-    expect(screen.getByText(/100\+ maintenance/i)).toBeDefined();
+    expect(screen.getAllByText("Coming Soon")).toHaveLength(2);
   });
 });

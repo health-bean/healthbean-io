@@ -55,27 +55,16 @@ function ProductCard({
             </li>
           ))}
         </ul>
-        <div className="mt-5 flex gap-2">
-          <a
-            href={product.primaryCta.href}
-            className={`flex-1 rounded-[--radius-button] py-2 text-center text-sm font-semibold transition-colors ${
+        <div className="mt-5">
+          <span
+            className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${
               isChewiq
-                ? "bg-chewiq-bg text-chewiq-dark hover:bg-chewiq-bg/80"
-                : "bg-honeydo-bg text-honeydo-dark hover:bg-honeydo-bg/80"
+                ? "bg-chewiq-bg text-chewiq-dark"
+                : "bg-honeydo-bg text-honeydo-dark"
             }`}
           >
-            {product.primaryCta.label}
-          </a>
-          <a
-            href={product.secondaryCta.href}
-            className={`flex-1 rounded-[--radius-button] border py-2 text-center text-sm font-semibold transition-colors ${
-              isChewiq
-                ? "border-chewiq-light text-chewiq-dark hover:bg-chewiq-bg/30"
-                : "border-honeydo-light text-honeydo-dark hover:bg-honeydo-bg/30"
-            }`}
-          >
-            {product.secondaryCta.label}
-          </a>
+            Coming Soon
+          </span>
         </div>
       </div>
     </div>

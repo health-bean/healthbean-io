@@ -5,18 +5,18 @@ import { Hero } from "@/components/hero";
 describe("Hero", () => {
   it("renders the headline", () => {
     render(<Hero />);
-    expect(screen.getByRole("heading", { name: /better health/i })).toBeDefined();
+    expect(
+      screen.getByRole("heading", { name: /better health/i })
+    ).toBeDefined();
   });
 
-  it("renders both CTAs", () => {
+  it("renders the tagline", () => {
     render(<Hero />);
-    expect(screen.getByRole("link", { name: /explore our products/i })).toBeDefined();
-    expect(screen.getByRole("link", { name: /our mission/i })).toBeDefined();
+    expect(screen.getByText(/everyone deserves/i)).toBeDefined();
   });
 
-  it("has correct CTA hrefs", () => {
+  it("renders the early access form", () => {
     render(<Hero />);
-    const productsCta = screen.getByRole("link", { name: /explore our products/i });
-    expect(productsCta.getAttribute("href")).toBe("#products");
+    expect(screen.getByPlaceholderText(/email/i)).toBeDefined();
   });
 });

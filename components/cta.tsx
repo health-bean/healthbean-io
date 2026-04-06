@@ -1,4 +1,5 @@
 import { CTA } from "@/lib/content";
+import { EarlyAccessForm } from "./early-access-form";
 
 export function Cta() {
   return (
@@ -9,20 +10,12 @@ export function Cta() {
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted md:text-base">
         {CTA.body}
       </p>
-      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <a
-          href={CTA.primaryCta.href}
-          className="rounded-[--radius-button] bg-brand-800 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:bg-brand-900"
-        >
-          {CTA.primaryCta.label}
-        </a>
-        <a
-          href={CTA.secondaryCta.href}
-          className="rounded-[--radius-button] border border-brand-800 px-8 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-800/5"
-        >
-          {CTA.secondaryCta.label}
-        </a>
+      <div className="mt-8">
+        <EarlyAccessForm />
       </div>
+      <p className="mt-3 text-xs text-muted">
+        No spam. Just a heads up when we launch.
+      </p>
     </section>
   );
 }

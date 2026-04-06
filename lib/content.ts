@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Health Bean",
-  tagline: "Intelligent Health Platforms",
+  tagline: "We believe everyone deserves to understand their own health.",
   url: "https://healthbean.io",
 } as const;
 
@@ -29,30 +29,65 @@ export const PROBLEM = {
   ],
 } as const;
 
-export const APPROACH = {
-  label: "Our Approach",
-  headline: "Real data. Real insights. Real progress.",
-  body: "Health Bean builds platforms with protocol-level intelligence and AI-powered correlation analysis — tools that find the hidden patterns between what you do, what you're exposed to, and how you feel. Designed for people managing real complexity, not counting calories.",
-  pillars: [
-    {
-      icon: "brain",
-      title: "AI-Powered Analysis",
-      description:
-        "Correlation engines that surface hidden connections between protocols, exposures, and symptoms",
-    },
-    {
-      icon: "heart",
-      title: "Built for Chronic Illness",
-      description:
-        "Designed for brain fog, fatigue, and the complexity of managing multiple protocols at once",
-    },
-    {
-      icon: "globe",
-      title: "Body + Environment",
-      description:
-        "Your healing journey and your home health — because recovery doesn't happen in a vacuum",
-    },
-  ],
+export const SHOWCASE = {
+  label: "See It In Action",
+  headline: "This is what intelligent health looks like.",
+  subtitle:
+    "Real insights. Real tracking. Real patterns your doctors can't see.",
+  insight: {
+    badge: "Pattern Detected",
+    title:
+      "High-histamine foods within 2 hours of exercise \u2192 migraine within 4\u20138 hours",
+    confidence: "87%",
+    occurrences: "19",
+    chartLabel: "Correlation strength over 90 days",
+  },
+  timeline: {
+    date: "Tuesday, March 12",
+    entries: [
+      {
+        time: "8:30a",
+        type: "MEAL" as const,
+        description: "Salmon, avocado, sauerkraut",
+        note: "AIP compliant",
+      },
+      {
+        time: "9:00a",
+        type: "SUPPS" as const,
+        description: "Vitamin D, Omega-3, Probiotics",
+      },
+      {
+        time: "2:15p",
+        type: "SYMPTOM" as const,
+        description: "Joint pain \u2014 severity 6/10",
+      },
+      {
+        time: "4:00p",
+        type: "EXPOSURE" as const,
+        description: "Mold \u2014 office building HVAC",
+      },
+    ],
+  },
+  homeHealth: {
+    score: 85,
+    tasks: [
+      {
+        name: "Replace HVAC Filter",
+        status: "overdue" as const,
+        detail: "Overdue 3 days",
+      },
+      {
+        name: "Test Smoke Detectors",
+        status: "soon" as const,
+        detail: "Due in 2 days",
+      },
+      {
+        name: "Clean Dryer Vent",
+        status: "scheduled" as const,
+        detail: "Scheduled \u2014 Apr 20",
+      },
+    ],
+  },
 } as const;
 
 export const PRODUCTS = {
@@ -70,11 +105,6 @@ export const PRODUCTS = {
         "Environmental exposure tracking (mold, chemicals, EMF)",
         "Practitioner dashboard for data-driven treatment decisions",
       ],
-      primaryCta: { label: "Learn More", href: "https://chew-iq.vercel.app" },
-      secondaryCta: {
-        label: "Try It Free",
-        href: "https://chew-iq.vercel.app",
-      },
       variant: "chewiq" as const,
     },
     {
@@ -88,14 +118,6 @@ export const PRODUCTS = {
         "Family collaboration with shared responsibility",
         "Cost tracking and maintenance history over time",
       ],
-      primaryCta: {
-        label: "Learn More",
-        href: "https://honeydo-iq.vercel.app",
-      },
-      secondaryCta: {
-        label: "Try It Free",
-        href: "https://honeydo-iq.vercel.app",
-      },
       variant: "honeydo" as const,
     },
   ],
@@ -126,13 +148,8 @@ export const TEAM = {
 } as const;
 
 export const CTA = {
-  headline: "Ready to take control of your health?",
-  body: "Real tools for real people managing real complexity. Start your journey today.",
-  primaryCta: { label: "Try ChewIQ", href: "https://chew-iq.vercel.app" },
-  secondaryCta: {
-    label: "Try HoneyDoIQ",
-    href: "https://honeydo-iq.vercel.app",
-  },
+  headline: "Be the first to know.",
+  body: "Sign up for early access and we'll let you know when our platforms are ready for you.",
 } as const;
 
 export const FOOTER = {
