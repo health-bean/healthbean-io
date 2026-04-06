@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "health bean",
+  name: "Health Bean",
   tagline: "Intelligent Health Platforms",
   url: "https://healthbean.io",
 } as const;
@@ -11,79 +11,91 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  headline: "Better health starts with better intelligence.",
+  headline: "Better health starts at home.",
   subtitle:
-    "We build intelligent platforms that help people take control of their health — from the food they eat to the home they live in.",
+    "We build data-driven platforms that help people manage chronic illness and protect the environments they heal in — powered by AI, built for real life.",
   primaryCta: { label: "Explore Our Products", href: "#products" },
   secondaryCta: { label: "Our Mission", href: "#problem" },
 } as const;
 
 export const PROBLEM = {
   label: "The Problem",
-  headline: "Health is more than what you eat. It's where you live, too.",
-  body: "50 million Americans live with autoimmune and chronic conditions. They track symptoms, follow complex protocols, and spend thousands searching for answers. But most health tools only see part of the picture — they miss the environment around you.",
+  headline:
+    "Chronic illness is complex. The tools haven't kept up.",
+  body: "50 million Americans navigate autoimmune conditions, complex healing protocols, and environmental triggers — often alone. They track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery — mold, air quality, chemical exposures — go completely untracked.",
   stats: [
     { value: "50M+", description: "Americans with\nchronic illness" },
-    { value: "$88.7B", description: "mHealth market\nby 2032" },
-    { value: "0", description: "platforms connecting\nbody + home health" },
+    { value: "Billions", description: "invested in mobile\nhealth every year" },
   ],
 } as const;
 
 export const APPROACH = {
   label: "Our Approach",
-  headline: "Intelligence at every layer of your health.",
-  body: "Health Bean builds tools that are smart enough to understand your unique situation — and simple enough to use when you're exhausted, foggy, or overwhelmed. We meet people where they are.",
+  headline: "Real data. Real insights. Real progress.",
+  body: "Health Bean builds platforms with protocol-level intelligence and AI-powered correlation analysis — tools that find the hidden patterns between what you do, what you're exposed to, and how you feel. Designed for people managing real complexity, not counting calories.",
   pillars: [
     {
-      icon: "🧠",
-      title: "AI-Powered",
-      description: "Pattern recognition that reveals what humans miss",
+      icon: "brain",
+      title: "AI-Powered Analysis",
+      description:
+        "Correlation engines that surface hidden connections between protocols, exposures, and symptoms",
     },
     {
-      icon: "💚",
-      title: "Patient-First",
-      description: "Designed for brain fog, fatigue, and real life",
+      icon: "heart",
+      title: "Built for Chronic Illness",
+      description:
+        "Designed for brain fog, fatigue, and the complexity of managing multiple protocols at once",
     },
     {
-      icon: "🔗",
-      title: "Holistic",
-      description: "Body health + home health, one vision",
+      icon: "globe",
+      title: "Body + Environment",
+      description:
+        "Your healing journey and your home health — because recovery doesn't happen in a vacuum",
     },
   ],
 } as const;
 
 export const PRODUCTS = {
   label: "Our Products",
-  headline: "Two tools. One vision.",
+  headline: "Two platforms. One mission.",
   items: [
     {
       name: "ChewIQ",
       wordmark: { primary: "Chew", accent: "IQ" },
-      tagline: "Your Intelligent Protocol Coach",
+      tagline: "The Protocol Management & Healing Platform",
       features: [
-        "AI-powered food & symptom tracking",
-        "9 healing protocols built in (AIP, GAPS, Low FODMAP...)",
-        "Correlation engine finds your triggers",
-        "Designed for brain fog & fatigue",
-        "Practitioner collaboration tools",
+        "AI-powered symptom, supplement, and exposure tracking",
+        "9 healing protocols with built-in compliance intelligence",
+        "Correlation engine that identifies your unique triggers",
+        "Environmental exposure tracking (mold, chemicals, EMF)",
+        "Practitioner dashboard for data-driven treatment decisions",
       ],
       primaryCta: { label: "Learn More", href: "https://chew-iq.vercel.app" },
-      secondaryCta: { label: "Try It Free", href: "https://chew-iq.vercel.app" },
+      secondaryCta: {
+        label: "Try It Free",
+        href: "https://chew-iq.vercel.app",
+      },
       variant: "chewiq" as const,
     },
     {
       name: "HoneyDoIQ",
       wordmark: { primary: "HoneyDo", accent: "IQ" },
-      tagline: "Smart Home Health Tracking",
+      tagline: "Smart Preventive Home Maintenance",
       features: [
-        "100+ maintenance task templates",
-        "Home health score & urgency tracking",
-        "Multi-property & family sharing",
-        "Smart reminders so nothing slips",
-        "Cost tracking over time",
+        "100+ maintenance task templates matched to your home",
+        "Home health scoring based on completion and urgency",
+        "Multi-property management from one account",
+        "Family collaboration with shared responsibility",
+        "Cost tracking and maintenance history over time",
       ],
-      primaryCta: { label: "Learn More", href: "https://honeydo-iq.vercel.app" },
-      secondaryCta: { label: "Try It Free", href: "https://honeydo-iq.vercel.app" },
+      primaryCta: {
+        label: "Learn More",
+        href: "https://honeydo-iq.vercel.app",
+      },
+      secondaryCta: {
+        label: "Try It Free",
+        href: "https://honeydo-iq.vercel.app",
+      },
       variant: "honeydo" as const,
     },
   ],
@@ -91,7 +103,7 @@ export const PRODUCTS = {
 
 export const CONNECTION = {
   quote:
-    "We believe true health is holistic — what goes in your body and what surrounds it. That's why we build tools for both.",
+    "No one should navigate chronic illness alone. We build the intelligence layer that reveals what's working, what's not, and what to try next.",
 } as const;
 
 export const TEAM = {
@@ -102,24 +114,27 @@ export const TEAM = {
       name: "Amy Mandell",
       initials: "AM",
       role: "Co-Founder",
-      bio: "Certified health coach with deep expertise in chronic illness recovery. Connected to the practitioner community that needs these tools.",
+      bio: "Certified health coach specializing in chronic illness recovery. Deep roots in the functional medicine practitioner community.",
     },
     {
       name: "Dee Byrne",
       initials: "DB",
       role: "Co-Founder & CEO",
-      bio: "Technical and operational leader who built both platforms. Personal connection to chronic illness through family drives the mission.",
+      bio: "Technical and operational leader who built both platforms. Personal connection to chronic illness through family drives everything we do.",
     },
   ],
 } as const;
 
 export const CTA = {
   headline: "Ready to take control of your health?",
-  body: "Start your journey with the tools built for real people navigating real health challenges.",
+  body: "Real tools for real people managing real complexity. Start your journey today.",
   primaryCta: { label: "Try ChewIQ", href: "https://chew-iq.vercel.app" },
-  secondaryCta: { label: "Try HoneyDoIQ", href: "https://honeydo-iq.vercel.app" },
+  secondaryCta: {
+    label: "Try HoneyDoIQ",
+    href: "https://honeydo-iq.vercel.app",
+  },
 } as const;
 
 export const FOOTER = {
-  copyright: `© ${new Date().getFullYear()} Health Bean. All rights reserved.`,
+  copyright: `\u00A9 ${new Date().getFullYear()} Health Bean. All rights reserved.`,
 } as const;

@@ -5,13 +5,12 @@ import { Problem } from "@/components/problem";
 describe("Problem", () => {
   it("renders the headline", () => {
     render(<Problem />);
-    expect(screen.getByRole("heading", { name: /more than what you eat/i })).toBeDefined();
+    expect(screen.getByRole("heading", { name: /chronic illness is complex/i })).toBeDefined();
   });
 
-  it("renders all three stats", () => {
+  it("renders stats", () => {
     render(<Problem />);
     expect(screen.getByText("50M+")).toBeDefined();
-    expect(screen.getByText("$88.7B")).toBeDefined();
-    expect(screen.getByText("0")).toBeDefined();
+    expect(screen.getByText("Billions")).toBeDefined();
   });
 });

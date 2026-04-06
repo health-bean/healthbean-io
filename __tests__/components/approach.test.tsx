@@ -5,13 +5,13 @@ import { Approach } from "@/components/approach";
 describe("Approach", () => {
   it("renders the headline", () => {
     render(<Approach />);
-    expect(screen.getByRole("heading", { name: /every layer/i })).toBeDefined();
+    expect(screen.getByRole("heading", { name: /real data/i })).toBeDefined();
   });
 
   it("renders all three pillars", () => {
     render(<Approach />);
-    expect(screen.getByText("AI-Powered")).toBeDefined();
-    expect(screen.getByText("Patient-First")).toBeDefined();
-    expect(screen.getByText("Holistic")).toBeDefined();
+    expect(screen.getByText("AI-Powered Analysis")).toBeDefined();
+    expect(screen.getByText("Built for Chronic Illness")).toBeDefined();
+    expect(screen.getByText(/Body \+ Environment/)).toBeDefined();
   });
 });

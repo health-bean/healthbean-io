@@ -5,6 +5,6 @@ import { Connection } from "@/components/connection";
 describe("Connection", () => {
   it("renders the quote", () => {
     render(<Connection />);
-    expect(screen.getByText(/true health is holistic/i)).toBeDefined();
+    expect(screen.getByText(/navigate chronic illness alone/i)).toBeDefined();
   });
 });

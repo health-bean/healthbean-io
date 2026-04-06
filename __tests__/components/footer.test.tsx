@@ -5,6 +5,6 @@ import { Footer } from "@/components/footer";
 describe("Footer", () => {
   it("renders copyright", () => {
     render(<Footer />);
-    expect(screen.getByText(/health bean/i)).toBeDefined();
+    expect(screen.getByText(/all rights reserved/i)).toBeDefined();
   });
 });

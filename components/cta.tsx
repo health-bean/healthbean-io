@@ -12,13 +12,13 @@ export function Cta() {
       <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
         <a
           href={CTA.primaryCta.href}
-          className="rounded-[--radius-button] bg-olive-700 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:bg-olive-800"
+          className="rounded-[--radius-button] bg-brand-800 px-8 py-3 text-sm font-semibold text-cream transition-colors hover:bg-brand-900"
         >
           {CTA.primaryCta.label}
         </a>
         <a
           href={CTA.secondaryCta.href}
-          className="rounded-[--radius-button] border border-olive-700 px-8 py-3 text-sm font-semibold text-olive-700 transition-colors hover:bg-olive-700/5"
+          className="rounded-[--radius-button] border border-brand-800 px-8 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-800/5"
         >
           {CTA.secondaryCta.label}
         </a>

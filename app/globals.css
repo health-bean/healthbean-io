@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /*
- * Health Bean Design System — "Warm Olive"
+ * Health Bean Design System — "Warm Teal"
  *
- * Olive green parent brand + warm neutrals.
+ * Deep teal brand + warm cream neutrals.
  * WCAG 2.1 AA compliant — all text/bg combos ≥ 4.5:1.
  * Zero inline styles. Everything through tokens.
  * Force light mode.
@@ -20,12 +20,11 @@ html {
 }
 
 @theme {
-  /* ── Brand: Olive ────────────────────────────────────────────── */
-  --color-olive-900: #2E3520;
-  --color-olive-800: #3D4A2E;
-  --color-olive-700: #4D5A35;
-  --color-olive-600: #5A6B3A;
-  --color-olive-400: #A4B87C;
+  /* ── Brand: Sage Earth ────────────────────────────────────────── */
+  --color-brand-900: #242e28;
+  --color-brand-800: #364a3c;
+  --color-brand-700: #4f6855;
+  --color-brand-600: #6f8a72;
 
   /* ── Warm Neutrals ───────────────────────────────────────────── */
   --color-cream: #FDF8F0;
@@ -66,7 +65,7 @@ h1, h2, h3, h4 {
 
 @layer base {
   h1, h2, h3, h4 {
-    color: var(--color-olive-900);
+    color: var(--color-brand-900);
   }
 }
 
@@ -75,6 +74,6 @@ html {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-olive-600);
+  outline: 2px solid var(--color-brand-700);
   outline-offset: 2px;
 }

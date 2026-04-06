@@ -2,15 +2,11 @@ import { SITE, FOOTER } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="flex items-center justify-between bg-olive-900 px-6 py-6 md:px-12">
-      <a
-        href="#"
-        aria-label={SITE.name}
-        className="flex items-center gap-2 font-display text-sm text-olive-400 transition-colors hover:text-olive-300"
-      >
-        <span aria-hidden="true">🫘</span>
-      </a>
-      <p className="text-xs text-muted">{FOOTER.copyright}</p>
+    <footer className="flex items-center justify-between bg-brand-900 px-6 py-6 md:px-12">
+      <span className="font-display text-sm font-bold text-white/60">
+        {SITE.name}
+      </span>
+      <p className="text-xs text-white/40">{FOOTER.copyright}</p>
     </footer>
   );
 }

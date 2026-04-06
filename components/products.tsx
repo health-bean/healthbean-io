@@ -48,7 +48,7 @@ function ProductCard({
         <ul className="flex-1 space-y-2 text-sm leading-relaxed">
           {product.features.map((feature) => (
             <li key={feature} className="flex gap-2">
-              <span className="mt-0.5 text-olive-400" aria-hidden="true">
+              <span className="mt-0.5 text-brand-600" aria-hidden="true">
                 •
               </span>
               {feature}
@@ -86,10 +86,10 @@ export function Products() {
   return (
     <section
       id="products"
-      className="border-b border-olive-900/10 px-6 py-section md:px-12"
+      className="border-b border-brand-900/10 px-6 py-section md:px-12"
     >
       <div className="text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-olive-600">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
           {PRODUCTS.label}
         </span>
         <h2 className="mt-3 text-2xl font-bold leading-snug md:text-3xl">
