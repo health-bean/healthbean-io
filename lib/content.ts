@@ -128,13 +128,13 @@ export const CONNECTION = {
 
 export const TEAM = {
   label: "Who We Are",
-  headline: "Built by people who get it.",
+  headline: "Built by people who live it.",
   members: [
     {
       name: "Amy Mandell",
       initials: "AM",
       role: "Co-Founder",
-      bio: "Certified health coach specializing in chronic illness recovery. Deep roots in the functional medicine practitioner community.",
+      bio: "Certified health coach who has navigated her own chronic illness journey. Her lived experience and deep roots in the functional medicine community drive everything we build.",
     },
     {
       name: "Dee Byrne",
