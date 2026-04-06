@@ -36,8 +36,8 @@ export function EarlyAccessForm({ variant = "default" }: { variant?: "default" |
 
   if (status === "success") {
     return (
-      <div className={`rounded-xl bg-brand-700/10 px-6 py-4 text-center ${variant === "inline" ? "" : "mx-auto max-w-md"}`}>
-        <p className="text-sm font-semibold text-brand-800">{message}</p>
+      <div className={`rounded-xl bg-white/15 px-6 py-4 text-center backdrop-blur-sm ${variant === "inline" ? "" : "mx-auto max-w-md"}`}>
+        <p className="text-sm font-semibold text-white">{message}</p>
       </div>
     );
   }

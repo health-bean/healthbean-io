@@ -11,11 +11,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  headline: "Better health starts at home.",
+  headline: "We believe everyone deserves to understand their own health.",
   subtitle:
-    "We build data-driven platforms that help people manage chronic illness and protect the environments they heal in — powered by AI, built for real life.",
-  primaryCta: { label: "Explore Our Products", href: "#products" },
-  secondaryCta: { label: "Our Mission", href: "#problem" },
+    "Data-driven platforms that help people manage chronic illness and protect the environments they heal in — powered by AI, built for real life.",
 } as const;
 
 export const PROBLEM = {

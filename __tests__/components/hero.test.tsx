@@ -6,13 +6,8 @@ describe("Hero", () => {
   it("renders the headline", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("heading", { name: /better health/i })
+      screen.getByRole("heading", { name: /everyone deserves/i })
     ).toBeDefined();
-  });
-
-  it("renders the tagline", () => {
-    render(<Hero />);
-    expect(screen.getByText(/everyone deserves/i)).toBeDefined();
   });
 
   it("renders the early access form", () => {
