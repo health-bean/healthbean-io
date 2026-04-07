@@ -1,41 +1,245 @@
-import { APPROACH } from "@/lib/content";
-import { Lightbulb, Heart, Globe } from "lucide-react";
+import { SHOWCASE } from "@/lib/content";
+import { TrendingUp, Calendar, Home, AlertTriangle } from "lucide-react";
 
-const PILLAR_ICONS = {
-  "AI-Powered Analysis": Lightbulb,
-  "Built for Chronic Illness": Heart,
-  "Body + Environment": Globe,
+const ENTRY_ICONS = {
+  Meal: { bg: "bg-emerald-50", text: "text-emerald-600", label: "Food" },
+  Supplement: { bg: "bg-purple-50", text: "text-purple-700", label: "Supplement" },
+  Symptom: { bg: "bg-red-50", text: "text-red-600", label: "Symptom" },
+  Exposure: { bg: "bg-amber-50", text: "text-amber-700", label: "Exposure" },
 } as const;
 
-export function Approach() {
+const TASK_STYLES = {
+  overdue: {
+    strip: "bg-red-500",
+    badge: "bg-red-50 text-red-600 ring-red-600/15",
+    label: "Overdue",
+  },
+  soon: {
+    strip: "bg-amber-400",
+    badge: "bg-amber-50 text-amber-700 ring-amber-600/15",
+    label: "Due Soon",
+  },
+  scheduled: {
+    strip: "bg-neutral-300",
+    badge: "bg-neutral-100 text-neutral-600 ring-neutral-400/15",
+    label: "Scheduled",
+  },
+} as const;
+
+function InsightCard() {
+  const { insight } = SHOWCASE;
   return (
-    <section id="approach" className="px-6 py-section text-center md:px-12">
-      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
-        {APPROACH.label}
-      </span>
-      <h2 className="mx-auto mt-3 max-w-xl text-2xl font-bold leading-snug md:text-3xl">
-        {APPROACH.headline}
-      </h2>
-      <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed md:text-base">
-        {APPROACH.body}
+    <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      {/* Icon + badge row — matches real ChewIQ pattern */}
+      <div className="mb-3 flex items-start gap-3">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+          <TrendingUp className="h-4 w-4" />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[10px] font-medium text-amber-700 ring-1 ring-inset ring-amber-600/15">
+              <AlertTriangle className="mr-1 inline h-2.5 w-2.5" />
+              {insight.badge}
+            </span>
+            <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-medium text-neutral-600">
+              {insight.confidence} confidence
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Insight prose — like real ChewIQ */}
+      <p className="mb-3 text-sm font-medium leading-snug">
+        {insight.title}
       </p>
-      <div className="mx-auto mt-10 grid max-w-2xl gap-4 md:grid-cols-3">
-        {APPROACH.pillars.map((pillar) => {
-          const Icon =
-            PILLAR_ICONS[pillar.title as keyof typeof PILLAR_ICONS];
+
+      {/* Contributing food chips — matches real ChewIQ pattern */}
+      {"foods" in insight && (
+        <div className="flex flex-wrap gap-1.5">
+          <span className="text-[10px] text-muted">Contributing foods:</span>
+          {insight.foods.map((food) => (
+            <span
+              key={food}
+              className="rounded-md bg-neutral-100 px-1.5 py-0.5 text-[10px] font-medium text-neutral-700"
+            >
+              {food}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TimelineCard() {
+  const { timeline } = SHOWCASE;
+  return (
+    <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      <div className="mb-3 flex items-center gap-2">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-chewiq-bg text-chewiq-dark">
+          <Calendar className="h-4 w-4" />
+        </div>
+        <p className="text-xs text-muted">{timeline.date}</p>
+      </div>
+
+      {/* Standalone card rows — matches real ChewIQ timeline */}
+      <div className="flex flex-col gap-2">
+        {timeline.entries.map((entry) => {
+          const style = ENTRY_ICONS[entry.type];
           return (
             <div
-              key={pillar.title}
-              className="rounded-[--radius-card] bg-white p-5 shadow-sm"
+              key={entry.time}
+              className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white px-3 py-2.5"
             >
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-brand-900/5">
-                <Icon className="h-5 w-5 text-brand-700" />
+              <div
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${style.bg}`}
+              >
+                <span className={`text-[8px] font-bold ${style.text}`}>
+                  {style.label.charAt(0)}
+                </span>
               </div>
-              <h3 className="mt-3 text-sm font-semibold">{pillar.title}</h3>
-              <p className="mt-1 text-xs text-muted">{pillar.description}</p>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] text-muted">{entry.time}</span>
+                  <span
+                    className={`rounded-full px-2 py-0.5 text-[9px] font-medium ring-1 ring-inset ${style.bg} ${style.text} ring-current/15`}
+                  >
+                    {style.label}
+                  </span>
+                </div>
+                <p className="truncate text-xs font-medium">
+                  {entry.description}
+                </p>
+                {"note" in entry && entry.note && (
+                  <span className="text-[9px] text-emerald-700">
+                    ✓ {entry.note}
+                  </span>
+                )}
+              </div>
             </div>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function HomeHealthCard() {
+  const { homeHealth } = SHOWCASE;
+  const circumference = 2 * Math.PI * 38;
+  const offset = circumference * (1 - homeHealth.score / 100);
+
+  return (
+    <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      <div className="mb-4 text-center">
+        {/* Score ring — matches real HoneyDoIQ: 100px, strokeWidth 8, amber→emerald */}
+        <div className="relative mx-auto mb-2 h-[100px] w-[100px]">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="38"
+              fill="none"
+              stroke="#f3ede3"
+              strokeWidth="8"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="38"
+              fill="none"
+              stroke="url(#scoreGradient)"
+              strokeWidth="8"
+              strokeDasharray={circumference}
+              strokeDashoffset={offset}
+              strokeLinecap="round"
+              transform="rotate(-90 50 50)"
+            />
+            <defs>
+              <linearGradient
+                id="scoreGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+                <stop offset="0%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#16a34a" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-3xl font-extrabold">{homeHealth.score}</span>
+            <span className="text-[10px] font-semibold text-neutral-400">
+              Health
+            </span>
+          </div>
+        </div>
+
+        {/* Category sub-scores — distinctive real HoneyDoIQ pattern */}
+        <div className="mx-auto flex max-w-[200px] justify-between text-[10px]">
+          <div>
+            <span className="text-neutral-400">Safety</span>{" "}
+            <span className="font-semibold text-emerald-600">92%</span>
+          </div>
+          <div>
+            <span className="text-neutral-400">Prevention</span>{" "}
+            <span className="font-semibold text-amber-600">78%</span>
+          </div>
+          <div>
+            <span className="text-neutral-400">Efficiency</span>{" "}
+            <span className="font-semibold text-emerald-600">85%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Task rows — matches real HoneyDoIQ structure */}
+      <div className="flex flex-col gap-2">
+        {homeHealth.tasks.map((task) => {
+          const style = TASK_STYLES[task.status];
+          return (
+            <div
+              key={task.name}
+              className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-3.5 py-3"
+            >
+              <div
+                className={`h-8 w-1 shrink-0 rounded-full ${style.strip}`}
+              />
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-semibold">{task.name}</p>
+                <p className="text-[10px] text-neutral-400">{task.detail}</p>
+              </div>
+              <span
+                className={`shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-bold ring-1 ring-inset ${style.badge}`}
+              >
+                {style.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function Approach() {
+  return (
+    <section id="approach" className="px-6 py-section md:px-12">
+      <div className="text-center">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
+          {SHOWCASE.label}
+        </span>
+        <h2 className="mx-auto mt-3 max-w-xl text-2xl font-bold leading-snug md:text-3xl">
+          {SHOWCASE.headline}
+        </h2>
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
+          {SHOWCASE.subtitle}
+        </p>
+      </div>
+      <div className="mx-auto mt-10 grid max-w-4xl gap-5 md:grid-cols-3">
+        <InsightCard />
+        <TimelineCard />
+        <HomeHealthCard />
       </div>
     </section>
   );

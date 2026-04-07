@@ -10,10 +10,11 @@ describe("Approach (Showcase)", () => {
     ).toBeDefined();
   });
 
-  it("renders the insight card", () => {
+  it("renders the insight card with oxalate pattern", () => {
     render(<Approach />);
-    expect(screen.getByText(/histamine/i)).toBeDefined();
-    expect(screen.getByText("87%")).toBeDefined();
+    expect(screen.getByText(/high oxalate/i)).toBeDefined();
+    expect(screen.getByText("Spinach")).toBeDefined();
+    expect(screen.getByText("Almonds")).toBeDefined();
   });
 
   it("renders the timeline card", () => {
@@ -22,9 +23,10 @@ describe("Approach (Showcase)", () => {
     expect(screen.getByText(/mold/i)).toBeDefined();
   });
 
-  it("renders the home health card", () => {
+  it("renders the home health card with score and sub-scores", () => {
     render(<Approach />);
     expect(screen.getByText("85")).toBeDefined();
+    expect(screen.getByText("92%")).toBeDefined();
     expect(screen.getByText("Replace HVAC Filter")).toBeDefined();
   });
 });

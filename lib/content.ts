@@ -33,35 +33,35 @@ export const SHOWCASE = {
   subtitle:
     "Real insights. Real tracking. Real patterns your doctors can't see.",
   insight: {
-    badge: "Pattern Detected",
+    badge: "Property Pattern",
     title:
-      "High-histamine foods within 2 hours of exercise \u2192 migraine within 4\u20138 hours",
-    confidence: "87%",
-    occurrences: "19",
-    chartLabel: "Correlation strength over 90 days",
+      "3 foods you eat regularly share a hidden property: high oxalate. Headaches appeared within 8 hours 71% of the time.",
+    confidence: "71%",
+    occurrences: "3 foods",
+    foods: ["Spinach", "Almonds", "Quinoa"],
   },
   timeline: {
     date: "Tuesday, March 12",
     entries: [
       {
         time: "8:30a",
-        type: "MEAL" as const,
+        type: "Meal" as const,
         description: "Salmon, avocado, sauerkraut",
         note: "AIP compliant",
       },
       {
         time: "9:00a",
-        type: "SUPPS" as const,
+        type: "Supplement" as const,
         description: "Vitamin D, Omega-3, Probiotics",
       },
       {
         time: "2:15p",
-        type: "SYMPTOM" as const,
+        type: "Symptom" as const,
         description: "Joint pain \u2014 severity 6/10",
       },
       {
         time: "4:00p",
-        type: "EXPOSURE" as const,
+        type: "Exposure" as const,
         description: "Mold \u2014 office building HVAC",
       },
     ],

@@ -3,15 +3,13 @@ import { describe, it, expect } from "vitest";
 import { Hero } from "@/components/hero";
 
 describe("Hero", () => {
-  it("renders the headline", () => {
+  it("renders the brand name in nav", () => {
     render(<Hero />);
-    expect(
-      screen.getByRole("heading", { name: /everyone deserves/i })
-    ).toBeDefined();
+    expect(screen.getByText("Health Bean")).toBeDefined();
   });
 
-  it("renders the early access form", () => {
+  it("renders the pattern detected badge", () => {
     render(<Hero />);
-    expect(screen.getByPlaceholderText(/email/i)).toBeDefined();
+    expect(screen.getByText("Pattern Detected")).toBeDefined();
   });
 });
