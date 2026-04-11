@@ -1,4 +1,4 @@
-import { SHOWCASE } from "@/lib/content";
+import { SHOWCASE, CONNECTION } from "@/lib/content";
 import { TrendingUp, Calendar, Home, AlertTriangle } from "lucide-react";
 
 const ENTRY_ICONS = {
@@ -26,10 +26,41 @@ const TASK_STYLES = {
   },
 } as const;
 
+const CORRELATION_STYLES = {
+  high: "bg-red-50 text-red-700 ring-red-600/20",
+  moderate: "bg-yellow-50 text-yellow-700 ring-yellow-600/20",
+  low: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
+} as const;
+
+function AppBadge({ app }: { app: "chewiq" | "honeydo" }) {
+  const isChewIQ = app === "chewiq";
+  return (
+    <span
+      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider ring-1 ring-inset ${
+        isChewIQ
+          ? "bg-chewiq-bg text-chewiq-dark ring-chewiq-dark/15"
+          : "bg-amber-50 text-amber-700 ring-amber-600/15"
+      }`}
+    >
+      <span
+        className={`h-1.5 w-1.5 rounded-full ${
+          isChewIQ ? "bg-chewiq-dark" : "bg-amber-500"
+        }`}
+      />
+      {isChewIQ ? "ChewIQ" : "HoneyDoIQ"}
+    </span>
+  );
+}
+
 function InsightCard() {
   const { insight } = SHOWCASE;
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      {/* App label */}
+      <div className="mb-3 flex justify-end">
+        <AppBadge app="chewiq" />
+      </div>
+
       {/* Icon + badge row — matches real ChewIQ pattern */}
       <div className="mb-3 flex items-start gap-3">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
@@ -55,7 +86,7 @@ function InsightCard() {
 
       {/* Contributing food chips — matches real ChewIQ pattern */}
       {"foods" in insight && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="mb-3 flex flex-wrap gap-1.5">
           <span className="text-[10px] text-muted">Contributing foods:</span>
           {insight.foods.map((food) => (
             <span
@@ -67,6 +98,26 @@ function InsightCard() {
           ))}
         </div>
       )}
+
+      {/* Food sensitivity correlations — matches real ChewIQ FoodPropertyCard */}
+      {"correlations" in insight && (
+        <div className="mt-3 border-t border-neutral-100 pt-3">
+          <div className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted">
+            Food Sensitivity Correlations
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {insight.correlations.map((c) => (
+              <span
+                key={c.property}
+                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium ring-1 ring-inset ${CORRELATION_STYLES[c.level]}`}
+              >
+                <span className="font-semibold">{c.property}</span>
+                <span className="opacity-70">{c.percent}%</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -75,6 +126,9 @@ function TimelineCard() {
   const { timeline } = SHOWCASE;
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      <div className="mb-3 flex justify-end">
+        <AppBadge app="chewiq" />
+      </div>
       <div className="mb-3 flex items-center gap-2">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-chewiq-bg text-chewiq-dark">
           <Calendar className="h-4 w-4" />
@@ -131,6 +185,9 @@ function HomeHealthCard() {
 
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
+      <div className="mb-3 flex justify-end">
+        <AppBadge app="honeydo" />
+      </div>
       <div className="mb-4 text-center">
         {/* Score ring — matches real HoneyDoIQ: 100px, strokeWidth 8, amber→emerald */}
         <div className="relative mx-auto mb-2 h-[100px] w-[100px]">
@@ -225,18 +282,15 @@ function HomeHealthCard() {
 export function Approach() {
   return (
     <section id="approach" className="px-6 py-section md:px-12">
-      <div className="text-center">
+      <blockquote className="mx-auto max-w-2xl text-balance text-center font-display text-xl italic leading-relaxed text-brand-800 md:text-2xl">
+        &ldquo;{CONNECTION.quote}&rdquo;
+      </blockquote>
+      <div className="mt-12 text-center">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
           {SHOWCASE.label}
         </span>
-        <h2 className="mx-auto mt-3 max-w-xl text-2xl font-bold leading-snug md:text-3xl">
-          {SHOWCASE.headline}
-        </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
-          {SHOWCASE.subtitle}
-        </p>
       </div>
-      <div className="mx-auto mt-10 grid max-w-4xl gap-5 md:grid-cols-3">
+      <div className="mx-auto mt-8 grid max-w-4xl gap-5 md:grid-cols-3">
         <InsightCard />
         <TimelineCard />
         <HomeHealthCard />

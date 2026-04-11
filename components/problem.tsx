@@ -6,10 +6,10 @@ export function Problem() {
       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
         {PROBLEM.label}
       </span>
-      <h2 className="mx-auto mt-3 max-w-xl text-2xl font-bold leading-snug md:text-3xl">
+      <h2 className="mx-auto mt-3 max-w-xl text-balance text-2xl font-bold leading-snug md:text-3xl">
         {PROBLEM.headline}
       </h2>
-      <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed md:text-base">
+      <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed md:text-base">
         {PROBLEM.body}
       </p>
       <div className="mx-auto mt-10 flex max-w-lg items-center justify-center gap-8 md:gap-12">

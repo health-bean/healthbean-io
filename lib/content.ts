@@ -11,16 +11,15 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  headline: "We believe everyone deserves to understand their own health.",
+  headline: "Chronic illness is complex. The tools haven't kept up.",
   subtitle:
-    "Data-driven platforms that help people manage chronic illness and protect the environments they heal in — powered by AI, built for real life.",
+    "Data-driven platforms for chronic illness and home health — built for real life.",
 } as const;
 
 export const PROBLEM = {
   label: "The Problem",
-  headline:
-    "Chronic illness is complex. The tools haven't kept up.",
-  body: "50 million Americans navigate autoimmune conditions, complex healing protocols, and environmental triggers — often alone. They track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery — mold, air quality, chemical exposures — go completely untracked.",
+  headline: "You're doing everything right. And still feel lost.",
+  body: "Navigating autoimmune conditions, complex healing protocols, and environmental triggers — often alone. People track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery — mold, air quality, chemical exposures — go completely untracked.",
   stats: [
     { value: "50M+", description: "Americans with\nchronic illness" },
     { value: "Billions", description: "invested in mobile\nhealth every year" },
@@ -35,10 +34,15 @@ export const SHOWCASE = {
   insight: {
     badge: "Property Pattern",
     title:
-      "3 foods you eat regularly share a hidden property: high oxalate. Headaches appeared within 8 hours 71% of the time.",
+      "3 foods you eat regularly share a hidden property: high oxalate. Joint and muscle pain appeared within 8 hours 71% of the time.",
     confidence: "71%",
     occurrences: "3 foods",
     foods: ["Spinach", "Almonds", "Quinoa"],
+    correlations: [
+      { property: "Oxalate", level: "high" as const, percent: 71 },
+      { property: "Histamine", level: "moderate" as const, percent: 34 },
+      { property: "Salicylate", level: "low" as const, percent: 12 },
+    ],
   },
   timeline: {
     date: "Tuesday, March 12",

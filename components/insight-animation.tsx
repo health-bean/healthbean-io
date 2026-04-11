@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { EarlyAccessForm } from "./early-access-form";
 
 const INSIGHT_TEXT =
-  "3 foods you eat regularly share a hidden property: high oxalate. Your headaches appeared within 8 hours of eating them 71% of the time.";
+  "3 foods you eat regularly share a hidden property: high oxalate. Your joint and muscle pain appeared within 8 hours of eating them 71% of the time.";
 const CONFIDENCE_TARGET = 71;
 const CONTRIBUTING_FOODS = ["Spinach", "Almonds", "Quinoa"];
 
@@ -164,12 +164,12 @@ export function InsightAnimation() {
             }}
             className="w-full max-w-2xl text-center"
           >
-            <h1 className="font-display text-3xl font-bold leading-snug tracking-tight text-white md:text-4xl lg:text-5xl">
-              We believe everyone deserves to understand their own health.
+            <h1 className="font-display text-balance text-3xl font-bold leading-snug tracking-tight text-white md:text-4xl lg:text-5xl">
+              This is what intelligent health looks like.
             </h1>
-            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/60 md:text-lg">
-              Data-driven platforms for chronic illness and home health —
-              powered by AI, built for real life.
+            <p className="mx-auto mt-5 max-w-lg text-pretty text-base leading-relaxed text-white/60 md:text-lg">
+              Real insights. Real tracking. Real patterns your doctors
+              can&apos;t see.
             </p>
             <div className="mx-auto mt-8 w-full max-w-md">
               <EarlyAccessForm />
