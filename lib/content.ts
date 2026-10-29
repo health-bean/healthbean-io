@@ -19,7 +19,7 @@ export const HERO = {
 export const PROBLEM = {
   label: "The Problem",
   headline: "You're doing everything right. And still feel lost.",
-  body: "Navigating chronic infections, mold and mycotoxin exposure, autoimmune conditions, uncontrolled inflammation, and complex healing protocols \u2014 often alone. People track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery \u2014 food and supplement reactions, toxin exposures, chemical exposures, air quality \u2014 go completely untracked.",
+  body: "Navigating chronic infections, mold and mycotoxin exposure, autoimmune conditions, uncontrolled inflammation, and complex healing protocols \u2014 often alone. People track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors may not see. And the environmental factors that influence recovery \u2014 food and supplement reactions, toxin exposures, chemical exposures, air quality \u2014 go completely untracked.",
   stats: [
     { value: "50M+", description: "Americans with\nchronic illness" },
     { value: "Billions", description: "invested in mobile\nhealth every year" },
@@ -30,7 +30,7 @@ export const SHOWCASE = {
   label: "See It In Action",
   headline: "This is what intelligent health looks like.",
   subtitle:
-    "Real insights. Real tracking. Real patterns your doctors can't see.",
+    "Real insights. Real tracking. Real patterns your doctors may not see.",
   insight: {
     badge: "Property Pattern",
     title:

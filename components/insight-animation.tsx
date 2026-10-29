@@ -169,7 +169,7 @@ export function InsightAnimation() {
             </h1>
             <p className="mx-auto mt-5 max-w-lg text-pretty text-base leading-relaxed text-white/60 md:text-lg">
               Real insights. Real tracking. Real patterns your doctors
-              can&apos;t see.
+              may not see.
             </p>
             <div className="mx-auto mt-8 w-full max-w-md">
               <EarlyAccessForm />
