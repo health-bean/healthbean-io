@@ -6,6 +6,7 @@ const ENTRY_ICONS = {
   Supplement: { bg: "bg-purple-50", text: "text-purple-700", label: "Supplement" },
   Symptom: { bg: "bg-red-50", text: "text-red-600", label: "Symptom" },
   Exposure: { bg: "bg-amber-50", text: "text-amber-700", label: "Exposure" },
+  Cycle: { bg: "bg-pink-50", text: "text-pink-700", label: "Cycle" },
 } as const;
 
 const TASK_STYLES = {
@@ -32,34 +33,10 @@ const CORRELATION_STYLES = {
   low: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
 } as const;
 
-function AppBadge({ app }: { app: "chewiq" | "honeydo" }) {
-  const isChewIQ = app === "chewiq";
-  return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider ring-1 ring-inset ${
-        isChewIQ
-          ? "bg-chewiq-bg text-chewiq-dark ring-chewiq-dark/15"
-          : "bg-amber-50 text-amber-700 ring-amber-600/15"
-      }`}
-    >
-      <span
-        className={`h-1.5 w-1.5 rounded-full ${
-          isChewIQ ? "bg-chewiq-dark" : "bg-amber-500"
-        }`}
-      />
-      {isChewIQ ? "ChewIQ" : "HoneyDoIQ"}
-    </span>
-  );
-}
-
 function InsightCard() {
   const { insight } = SHOWCASE;
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
-      {/* App label */}
-      <div className="mb-3 flex justify-end">
-        <AppBadge app="chewiq" />
-      </div>
 
       {/* Icon + badge row — matches real ChewIQ pattern */}
       <div className="mb-3 flex items-start gap-3">
@@ -126,9 +103,6 @@ function TimelineCard() {
   const { timeline } = SHOWCASE;
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
-      <div className="mb-3 flex justify-end">
-        <AppBadge app="chewiq" />
-      </div>
       <div className="mb-3 flex items-center gap-2">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-chewiq-bg text-chewiq-dark">
           <Calendar className="h-4 w-4" />
@@ -185,9 +159,6 @@ function HomeHealthCard() {
 
   return (
     <div className="rounded-2xl border border-neutral-200/60 bg-white p-4 shadow-sm">
-      <div className="mb-3 flex justify-end">
-        <AppBadge app="honeydo" />
-      </div>
       <div className="mb-4 text-center">
         {/* Score ring — matches real HoneyDoIQ: 100px, strokeWidth 8, amber→emerald */}
         <div className="relative mx-auto mb-2 h-[100px] w-[100px]">

@@ -19,7 +19,7 @@ export const HERO = {
 export const PROBLEM = {
   label: "The Problem",
   headline: "You're doing everything right. And still feel lost.",
-  body: "Navigating autoimmune conditions, complex healing protocols, and environmental triggers — often alone. People track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery — mold, air quality, chemical exposures — go completely untracked.",
+  body: "Navigating chronic infections, mold and mycotoxin exposure, autoimmune conditions, uncontrolled inflammation, and complex healing protocols \u2014 often alone. People track symptoms across dozens of variables, manage multiple protocols simultaneously, and spend thousands searching for patterns their doctors can't see. And the environmental factors that influence recovery \u2014 food and supplement reactions, toxin exposures, chemical exposures, air quality \u2014 go completely untracked.",
   stats: [
     { value: "50M+", description: "Americans with\nchronic illness" },
     { value: "Billions", description: "invested in mobile\nhealth every year" },
@@ -47,6 +47,11 @@ export const SHOWCASE = {
   timeline: {
     date: "Tuesday, March 12",
     entries: [
+      {
+        time: "7:00a",
+        type: "Cycle" as const,
+        description: "Cycle day 22 — luteal phase",
+      },
       {
         time: "8:30a",
         type: "Meal" as const,
@@ -102,7 +107,7 @@ export const PRODUCTS = {
       tagline: "The Protocol Management & Healing Platform",
       features: [
         "AI-powered symptom, supplement, and exposure tracking",
-        "9 healing protocols with built-in compliance intelligence",
+        "Healing protocols with built-in compliance intelligence",
         "Correlation engine that identifies your unique triggers",
         "Environmental exposure tracking (mold, chemicals, EMF)",
         "Practitioner dashboard for data-driven treatment decisions",
@@ -138,7 +143,7 @@ export const TEAM = {
       name: "Amy Mandell",
       initials: "AM",
       role: "Co-Founder",
-      bio: "Certified health coach who has navigated her own chronic illness journey. Her lived experience and deep roots in the functional medicine community drive everything we build.",
+      bio: "Certified Health Coach who has navigated her own chronic illness journey. Her lived experience and deep roots in the functional and alternative medicine community drive everything we build.",
     },
     {
       name: "Dee Byrne",

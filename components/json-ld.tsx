@@ -10,13 +10,15 @@ const ORGANIZATION_JSON_LD = {
   subOrganization: [
     {
       "@type": "SoftwareApplication",
-      name: "ChewIQ",
+      name: "Pico Health",
+      url: "https://picohealth.app",
       applicationCategory: "HealthApplication",
       description: "Protocol management and healing platform.",
     },
     {
       "@type": "SoftwareApplication",
-      name: "HoneyDoIQ",
+      name: "Pico Home",
+      url: "https://picohome.app",
       applicationCategory: "LifestyleApplication",
       description: "Smart preventive home maintenance.",
     },

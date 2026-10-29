@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     "symptom tracking",
     "home health",
     "environmental exposure",
-    "ChewIQ",
-    "HoneyDoIQ",
+    "Pico Health",
+    "Pico Home",
     "functional medicine",
   ],
   alternates: {
@@ -70,9 +70,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 

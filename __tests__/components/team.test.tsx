@@ -14,4 +14,10 @@ describe("Team", () => {
     expect(screen.getByText("Co-Founder")).toBeDefined();
     expect(screen.getByText("Co-Founder & CEO")).toBeDefined();
   });
+
+  it("describes Amy as a Certified Health Coach in functional and alternative medicine", () => {
+    render(<Team />);
+    expect(screen.getByText(/Certified Health Coach/)).toBeDefined();
+    expect(screen.getByText(/functional and alternative medicine/)).toBeDefined();
+  });
 });
